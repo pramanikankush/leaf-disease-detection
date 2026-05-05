@@ -5,6 +5,14 @@ Centralized configuration and API key management.
 import os
 from typing import Optional
 
+try:
+    from dotenv import load_dotenv
+
+    load_dotenv()
+except Exception:
+    # Fallback to environment variables only if dotenv is unavailable.
+    pass
+
 
 class APIConfig:
     """Manage API keys and configuration across the application."""
